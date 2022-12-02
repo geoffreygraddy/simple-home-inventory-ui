@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeInventoryService } from '../services/home-inventory.service';
 
 @Component({
   selector: 'app-home-inventory-list',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeInventoryListComponent implements OnInit {
 
-  items = [1, 2];
+  homeInventory: any;
 
-  constructor() { }
+  constructor(private homeInventoryService: HomeInventoryService) { }
 
   ngOnInit(): void {
+    this.homeInventory = this.homeInventoryService.getHomeInventoryList();
   }
 
 }
