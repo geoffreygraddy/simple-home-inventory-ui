@@ -13,7 +13,8 @@ export class HomeInventoryListComponent implements OnInit {
   constructor(private homeInventoryService: HomeInventoryService) { }
 
   ngOnInit(): void {
-    this.homeInventory = this.homeInventoryService.getHomeInventoryList();
+    this.homeInventoryService.getHomeInventoryList().
+      subscribe({next: r => this.homeInventory = r, error: e=> console.log(e)});
   }
 
 }
