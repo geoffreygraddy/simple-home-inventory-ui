@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/api"
+  from = "/api/v1/home-inventory"
   to = "http://homeinventorybackend-env.eba-ncy44xmq.us-east-1.elasticbeanstalk.com"
   status = 200
   force = true
