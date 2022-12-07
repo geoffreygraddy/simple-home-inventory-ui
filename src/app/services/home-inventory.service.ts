@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeInventoryService {
 
+  baseUrl: string = environment.backend.baseURL;
+
   constructor(private http: HttpClient) { }
 
   getHomeInventoryList() {
-    return this.http.get<{}[]>(`api/v1/home-inventory`);
+    return this.http.get<{}[]>(`${this.baseUrl}/api/v1/home-inventory`);
   }
 
   getHomeInventoryItem(id: any) {
